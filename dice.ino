@@ -105,82 +105,53 @@ void loop() {
 
     #ifdef OUTPUT_READABLE_ACCELGYRO
         // display tab-separated accel/gyro x/y/z values
-        Serial.print("a/g:\t");
-        Serial.print(ax); Serial.print("\t");
-        Serial.print(ay); Serial.print("\t");
-        Serial.print(az); Serial.print("\t"); // Up 16K / Dwn - 16K
-        Serial.print(gx); Serial.print("\t");
-        Serial.print(gy); Serial.print("\t");
-        Serial.println(gz);
+        //Serial.print("a/g:\t");
+        //Serial.print(ax); Serial.print("\t");
+        //Serial.print(ay); Serial.println("\t");
+        Serial.print(az); Serial.println("\t"); // Up 16K / Dwn - 16K
+        //Serial.print(gx); Serial.println("\t");
+        //Serial.print(gy); Serial.print("\t");
+        //Serial.println(gz);
     #endif
 
 
 /*
-if (ay >= 10000){
-  Serial.print("Right");
+
+if (ax >= 15000){
+  Serial.println("Side one");
 }
 
-if (ay <= -10000){
-  Serial.print("Left");
+if (ax <= -15000){
+  Serial.println("Side six"); 
 }
 
-if (az >= 10000){
-  Serial.print("Forward");
+if (ay >= 15000){
+  Serial.println("Side two");
 }
 
-if (az <= -10000){
-  Serial.print("Backwards");
-  
-}
-
-
-
-if (gy >= 15000){
-  //analogWrite(ledPin, 255);
-  //delay(3000);
-  //for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -=1){
-  //analogWrite(ledPin, fadeValue);
-
-  for (int fadeValue = 0 ; fadeValue <= 255; fadeValue += 5) {
-    // sets the value (range from 0 to 255):
-    analogWrite(ledPin, fadeValue);
-    // wait for 30 milliseconds to see the dimming effect
-    delay(30);
-  }
-
-  // fade out from max to min in increments of 5 points:
-  for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -= 1) {
-    // sets the value (range from 0 to 255):
-    analogWrite(ledPin, fadeValue);
-    // wait for 30 milliseconds to see the dimming effect
-    delay(30);
-
-
+if (ay <= -15000){
+  Serial.println("Side five");  
 
 }
 
-    #ifdef OUTPUT_BINARY_ACCELGYRO
-        Serial.write((uint8_t)(ax >> 8)); Serial.write((uint8_t)(ax & 0xFF));
-        Serial.write((uint8_t)(ay >> 8)); Serial.write((uint8_t)(ay & 0xFF));
-        Serial.write((uint8_t)(az >> 8)); Serial.write((uint8_t)(az & 0xFF));
-        Serial.write((uint8_t)(gx >> 8)); Serial.write((uint8_t)(gx & 0xFF));
-        Serial.write((uint8_t)(gy >> 8)); Serial.write((uint8_t)(gy & 0xFF));
-        Serial.write((uint8_t)(gz >> 8)); Serial.write((uint8_t)(gz & 0xFF));
-    #endif
-   
-
-/*
-  if (ledState != lastLedState){
-     if (az >= 10000) {
-      digitalWrite(ledPin, HIGH);
-      }
-  else {
-    digitalWrite(ledPin, LOW);
-  }
+if (az >= 15000){
+  Serial.println("Side three");
 }
+
+if (az <= -15000){
+  Serial.println("Side four");  
+}
+
 */
-   
+
 
 }
+
+
+
+
+   
+
+
 
 
